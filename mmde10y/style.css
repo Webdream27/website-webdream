@@ -1,6 +1,5 @@
-/* --- Basis-Styles --- */
 * {
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 body {
@@ -9,7 +8,7 @@ body {
     background: gray;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 #holder {
@@ -17,6 +16,7 @@ body {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    max-width: 1200px;
     width: 100%;
 }
 
@@ -27,7 +27,7 @@ header {
 
 h1, h2, h4 {
     text-shadow: beige 2px 5px 8px;
-    padding: 10px;
+    padding: 0.5rem 1rem;
 }
 
 nav {
@@ -37,56 +37,144 @@ nav {
 
 nav ul {
     margin: 0;
-    padding: 10px;
+    padding: 0.1rem;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     list-style: none;
 }
 
 nav ul li {
-    margin: 5px;
+    margin: 0.5rem;
+    font-size: 120%;
+    padding: 0.5rem;
 }
 
 nav a:link, nav a:visited {
     display: inline-block;
     background-color: #9F81F7;
     border-radius: 0.5em;
-    padding: 8px 15px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
     text-decoration: none;
     font-weight: bold;
-    color: #000;
+    text-shadow: beige 2px 5px 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     background-image: linear-gradient(#9F81F7, #7401DF);
-    white-space: nowrap; 
+    color: #000;
+}
+
+nav a:hover {
+    color: beige;
 }
 
 main {
-    padding: 20px;
+    padding: 2rem;
+    flex: 1 1 100%;
     width: 100%;
 }
 
+aside {
+    background: #9F81F7;
+    padding: 1rem;
+    flex: 1 1 100%;
+}
 
-img {
-    max-width: 100%;
-    height: auto;
+aside p {
+    font-variant: small-caps;
+}
+
+footer {
+    padding: 1rem;
+    border-top: 0.1rem solid blue;
+    width: 100%;
+    color: aquamarine;
+    text-align: center;
+}
+
+.firma {
+    font: bold 200% Georgia, "Times New Roman", Times, serif;
+    color: beige;
+    margin: 0;
+    padding: 1.5rem;
+}
+
+#blumenbild {
+    margin: 2rem auto;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.blumen {
+    width: 180px;
+    height: 180px; 
+    border-radius: 0.5em;
+    object-fit: cover;
 }
 
 .profilbild {
-    width: 150px;
+    width: 10rem;
+    height: auto;
     float: left;
-    margin: 0 15px 15px 0;
+    margin: 0 1rem 1rem 0;
+    border-radius: 0.5em;
 }
 
-/* --- Speziell für das Handy --- */
-@media (max-width: 600px) {
-    .profilbild, #formular {
-        float: none; /* Stoppt das Nebeneinanderstehen auf Handys */
-        margin: 10px auto;
+article figure {
+    float: left;
+    margin-right: 1rem;
+}
+
+#formular {
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+#hallo {
+    max-height: 3%;
+}
+
+@media (max-width: 768px) {
+    .profilbild, #formular, article figure {
+        float: none;
         display: block;
+        margin: 10px auto;
+        text-align: center;
     }
-    
+
     #blumenbild {
         margin: 0 auto;
-        text-align: center;
+        display: block;
+    }
+
+    .blumen {
+        width: 140px;
+        height: 140px;
+        margin: 10px auto;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    nav a:link {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    main {
+        padding: 1rem;
     }
 }
