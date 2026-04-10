@@ -1,0 +1,18 @@
+.navbar {
+	background: #414141;
+}
+
+.footer {
+	border-left-width: medium;
+  border-left-style: solid;
+  border-color: #FF8000;
+  border-left-style: solid;
+  padding: 5em;
+  border-right-style: solid;
+  border-width: 1px;
+  border-style: solid;
+  
+  
+}
+
+body { overflow-y: sroll; }
