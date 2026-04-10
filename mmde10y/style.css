@@ -2,80 +2,60 @@ body {
     font: 100%/1.3 Verdana, Arial, Helvetica, sans-serif;
     color: #000;
     background: gray;
-   
-   
+    margin: 0; 
+    padding: 0;
 }
-
-
 
 #holder {
     background: #BCA9F5;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    max-width: 100%; 
 }
 
-
-
 header {
-    min-width:95%;
     background: #7401DF;
     width: 100%;
 }
 
-
-
-h1 {
+h1, h2, h4 {
     text-shadow: beige 2px 5px 8px;
+    padding-left: 1rem;
 }
-
-h2 {
-    text-shadow: beige 2px 5px 8px;
-}
-
-h4 {
-    text-shadow: beige 2px 5px 8px;
-}
-
-
-    
-
 
 nav {
     text-align: center;
-
-
+    width: 100%;
 }
+
 nav ul {
     margin: 0;
     padding: 0.1rem;
-    display: inline;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    list-style: none;
 }
 
-
 nav ul li {
-    margin: 0.5rem 0;
+    margin: 0.5rem;
     font-size: 120%;
-    list-style: none;
     padding: 0.5rem;
-    display: inline-flex;
-    justify-content: space-around;
-    flex: 0 0 auto;
 }
 
 nav a:link {
-    display: inline;
+    display: inline-block;
     background-color: #9F81F7;
     border-radius: 0.5em;
-    width: 90%;
     font-size: 1rem;
-    margin: 1rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     text-decoration: none;
     font-weight: bold;
     text-shadow: beige 2px 5px 8px;
-    box-shadow: beige 2px 2px 2px 2px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     background-image: linear-gradient(#9F81F7, #7401DF);
+    color: #000;
 }
 
 nav a:visited,
@@ -83,37 +63,30 @@ nav a:hover,
 nav a:active,
 nav a:focus {
     color: beige;
-    max-height: 3rem;
 }
-   
 
 main {
-    padding: 9%; 
-    
+    padding: 5%; 
+    flex: 1 1 100%;
 }
-
 
 aside {
     background: #9F81F7;
-    padding: 0.5rem;
-    
+    padding: 1rem;
+    flex: 1 1 100%;
 }
 
 aside p {
     font-variant: small-caps;
-    
 }
-
-
 
 footer {
     padding: 0.5rem;
     border-top: 0.1rem solid blue;
     width: 100%;
     color: aquamarine;
+    text-align: center;
 }
-
-
 
 .firma {
     font: bold 200% Georgia, "Times New Roman", Times, serif;
@@ -122,35 +95,78 @@ footer {
     padding: 1.5rem;
 }
 
-
+/* --- Bilder und Formular --- */
 #blumenbild {
     margin: 0 15.5%;
+    text-align: center;
 }
 
 .blumen {
     width: 10rem;
     height: 10rem; 
     border-radius: 0.5em;
+    object-fit: cover;
 }
 
 .profilbild {
     width: 10rem;
     height: 14rem;
     float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
     border-radius: 0.5em;
-    
 }
-
 
 article figure {
     float: left;
+    margin-right: 1rem;
 }
 
 #formular {
     float: left;
     margin-left: 0;
+    width: 100%; 
+    max-width: 400px;
 }
 
 #hallo {
     max-height: 3%;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+@media (max-width: 768px) {
+    /* Hebt Floats auf, damit alles untereinander steht */
+    .profilbild, #formular, article figure {
+        float: none;
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    /* Zentriert Bilder auf kleinen Bildschirmen */
+    #blumenbild {
+        margin: 0 auto;
+    }
+
+    /* Macht das Menü mobilfreundlich */
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    nav a:link {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Verhindert, dass Text oder Container seitlich rausgehen */
+    main {
+        padding: 1rem;
+    }
 }
